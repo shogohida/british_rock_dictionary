@@ -1,4 +1,4 @@
 class Album < ApplicationRecord
-  has_many :tracks
+  has_many :songs
   validates :name, presence: true
 end

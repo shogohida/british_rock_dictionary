@@ -2,6 +2,7 @@
 
 <p><%= @artist.name %></p>
 
-<% @artist.songs.albums do |album| %>
-  <%= album.title %>
+<% @artist.songs.each do |song| %>
+  <%= song.name %>
+  <%= song.album.name %>
 <% end %>

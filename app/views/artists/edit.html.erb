@@ -1,2 +1,8 @@
-<h1>Artists#edit</h1>
-<p>Find me in app/views/artists/edit.html.erb</p>
+
+<h1>Edit a artist</h1>
+
+<%= simple_form_for(@artist) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :years_active %>
+    <%= f.submit %>
+<% end %>
