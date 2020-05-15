@@ -1,0 +1,7 @@
+<h1>Artist details</h1>
+
+<p><%= @artist.name %></p>
+
+<% @artist.songs.albums do |album| %>
+  <%= album.title %>
+<% end %>
