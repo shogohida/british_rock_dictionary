@@ -1,4 +1,5 @@
 class Artist < ApplicationRecord
+  has_one_attached :photo
   has_many :songs, dependent: :destroy
   has_many :albums, through: :songs
   #YEARS = (1..70)
