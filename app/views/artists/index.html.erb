@@ -1,18 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href=""/artists>
+  <a class="navbar-brand" href="/artists">
     <img src="https://www.publicdomainpictures.net/pictures/40000/velka/union-jack-flag-1365882581V0R.jpg" />
-</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a><%= link_to 'Add an artist', new_artist_path(@artist) %></a>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.onebauer.media/one/media/5e00/e350/6a79/a373/b5e5/b37b/1990s_albums.jpg);">
@@ -26,8 +27,6 @@
     <% @artists.each do |artist| %>
          <%= link_to artist.name, artist_path(artist) %>
          <%= link_to 'Edit', edit_artist_path(artist) %>
-
-      </div>
     <% end %>
   </div>
 </div>

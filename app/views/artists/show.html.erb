@@ -1,17 +1,61 @@
-<h1>Artist details</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="/artists">
+    <img src="https://www.publicdomainpictures.net/pictures/40000/velka/union-jack-flag-1365882581V0R.jpg" />
+  </a>
+</div>
+
+<div class="d-flex slack-container">
+  <div class="conversations-sidebar">
+    <h1>Playlist</h1>
+    <div class="chat-section">
+      <div class="chat-section-header">
+        <h3><%= link_to 'Home', artists_path %></h3>
+      </div>
+      <div class="channel">
+        <%= link_to 'Add an artist', new_artist_path(@artist) %>
+      </div>
+      <div class="channel">
+        <%= link_to 'Add a new song', new_artist_song_path(@artist) %>
+      </div>
+    </div>
+  </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1>Artist details</h1>
+    </div>
+
+    <div class="artist-info">
+      <h3><%= @artist.name %></h3>
+      <h4><%= @artist.years_active %> years active</h4>
+      <!-- name, image with big box -->
+    </div>
+    <div class="chat-conversations">
+      <div class="message">
+        <div class="card-product-photo">
+          <%# cl_image_tag @artist.photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
+        <div class="message-content">
+          <% @artist.songs.each do |song| %>
+            <%= song.name %>
+            <%= song.album.name %>
+            <%# link_to song.album.name, album_path(@album) %>
+            <%= link_to 'YouTube link', "https://www.youtube.com/results?search_query=#{song.name}" %>
+            <%# link_to 'Edit', edit_artist_song_path(song) %>
+            <%= link_to 'Delete', artist_song_path(song), method: :delete %>
+          <% end %>
+          <!-- iterate over songs song name <p><strong>arthur-littm</strong></p> -->
+          <!-- <p>Hey everyone 👋 We’ve just launched a new Le Wagon <strong>UI Kit</strong> 🚀 👉  <a href="https://uikit.lewagon.com/">https://uikit.lewagon.com/</a></p> -->
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- <h1>Artist details</h1>
 
 <h3><%= @artist.name %></h3>
-<p><%= @artist.years_active %> years active</p>
+<p><%= @artist.years_active %> years active</p> -->
 
-<% @artist.songs.each do |song| %>
-  <%= song.name %>
-  <%= song.album.name %>
-  <%# link_to song.album.name, album_path(@album) %>
-  <%= link_to 'YouTube link', "https://www.youtube.com/results?search_query=#{song.name}" %>
-  <%= link_to 'Edit this song', edit_artist_song_path(song) %>
-<% end %>
-
-<%= link_to 'Add a new song', new_artist_song_path(@artist) %>
 
 <!-- problem with edit
 need to change structure

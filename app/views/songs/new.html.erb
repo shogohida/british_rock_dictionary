@@ -1,10 +1,19 @@
-<h1>Add a new song</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="/artists">
+    <img src="https://www.publicdomainpictures.net/pictures/40000/velka/union-jack-flag-1365882581V0R.jpg" />
+  </a>
+</div>
 
-<%= simple_form_for [@artist, @song] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :minutes %>
-  <%= f.association :album, input_html: { class: 'album' } %>
-  <%= f.submit %>
-<% end %>
+<div class="song-container">
+  <div class="song-info">
+    <h1>Add a new song</h1>
 
+    <%= simple_form_for [@artist, @song] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :minutes %>
+      <%= f.association :album, input_html: { class: 'album' } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
 <!-- need to change input_html -->

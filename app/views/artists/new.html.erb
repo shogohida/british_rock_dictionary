@@ -1,11 +1,20 @@
-<h1>Add a new artist</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="/artists">
+    <img src="https://www.publicdomainpictures.net/pictures/40000/velka/union-jack-flag-1365882581V0R.jpg" />
+  </a>
+</div>
 
-<%= simple_form_for(@artist) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :years_active %>
-    <%= f.input :separated %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-<% end %>
+<div class="song-container">
+  <div class="song-info">
+    <h1>Add a new artist</h1>
 
+    <%= simple_form_for(@artist) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :years_active %>
+        <%= f.input :separated %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+    <% end %>
+  </div>
+</div>
 <!-- to add uploding image feature -->
