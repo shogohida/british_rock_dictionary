@@ -22,9 +22,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
-
   # def update
   #   @artist.update(artist_params)
   #   if @artist.save
