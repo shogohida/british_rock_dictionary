@@ -35,14 +35,17 @@
           <%# cl_image_tag @artist.photo.key, height: 300, width: 400, crop: :fill %>
         </div>
         <div class="message-content">
-          <% @artist.songs.each do |song| %>
-            <%= song.name %>
-            <%= song.album.name %>
-            <%# link_to song.album.name, album_path(@album) %>
-            <%= link_to 'YouTube link', "https://www.youtube.com/results?search_query=#{song.name}" %>
-            <%# link_to 'Edit', edit_artist_song_path(song) %>
-            <%= link_to 'Delete', artist_song_path(song), method: :delete %>
-          <% end %>
+          <ul>
+            <% i = 1 %>
+            <% @artist.songs.each do |song| %>
+              <strong><%= i %>   <%= song.name %> from <%= song.album.name %></strong>
+              <%# link_to song.album.name, album_path(@album) %>
+                <li><%= link_to 'Watch a video in YouTube', "https://www.youtube.com/results?search_query=#{song.name}" %></li>
+                <%# link_to 'Edit', edit_artist_song_path(song) %>
+                <li><%= link_to 'Delete', artist_song_path(song), method: :delete %></li>
+              <% i += 1 %>
+            <% end %>
+          </ul>
           <!-- iterate over songs song name <p><strong>arthur-littm</strong></p> -->
           <!-- <p>Hey everyone 👋 We’ve just launched a new Le Wagon <strong>UI Kit</strong> 🚀 👉  <a href="https://uikit.lewagon.com/">https://uikit.lewagon.com/</a></p> -->
         </div>
