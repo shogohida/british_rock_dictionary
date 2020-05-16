@@ -1,0 +1,9 @@
+<h1>Add a new album</h1>
+
+<%= simple_form_for(@album) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :genre %>
+    <%= f.submit %>
+<% end %>
+
+<!-- to add uploding image feature -->

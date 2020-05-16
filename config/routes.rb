@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #get 'albums/index'
+  #get 'albums/new'
+  #get 'albums/showedit'
   #get 'songs/new'
   #get 'songs/edit'
   #get 'artists/index'
@@ -9,4 +12,5 @@ Rails.application.routes.draw do
   resources :artists, only: [:index, :show, :new, :create, :edit, :update] do
     resources :songs, only: [:new, :create, :edit, :update, :destroy]
   end
+  resources :albums
 end

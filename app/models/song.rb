@@ -4,5 +4,5 @@ class Song < ApplicationRecord
   LENGTH = (0..10)
   validates :name, presence: true
   validates :minutes, inclusion: {in: LENGTH }
-  validates :album, uniqueness: { scope: :artist }
+  # validates :album, uniqueness: { scope: :artist }
 end

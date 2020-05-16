@@ -1,0 +1,7 @@
+<h1>Edit an album</h1>
+
+<%= simple_form_for(@album) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :genre %>
+    <%= f.submit %>
+<% end %>
