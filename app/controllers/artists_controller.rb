@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update]
+  before_action :set_artist, only: [:show]
 
   def index
     @artists = Artist.all
@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
+    # raise
     if @artist.save
       redirect_to artist_path(@artist)
     else
@@ -21,17 +22,17 @@ class ArtistsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    @artist.update(artist_params)
-    if @artist.save
-      redirect_to artist_path(@artist)
-    else
-      render :new
-    end
-  end
+  # def update
+  #   @artist.update(artist_params)
+  #   if @artist.save
+  #     redirect_to artist_path(@artist)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private
 
@@ -40,7 +41,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :years_active)
+    params.require(:artist).permit(:name, :years_active, :photo)
   end
 
 end

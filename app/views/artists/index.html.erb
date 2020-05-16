@@ -3,9 +3,9 @@
     <img src="https://www.publicdomainpictures.net/pictures/40000/velka/union-jack-flag-1365882581V0R.jpg" />
   </a>
 
-  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button> -->
+  </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -24,20 +24,11 @@
 
 <div class="container">
   <div class="cards">
-    <% @artists.each do |artist| %>
-         <%= link_to artist.name, artist_path(artist) %>
-         <%= link_to 'Edit', edit_artist_path(artist) %>
-    <% end %>
+    <ul>
+      <% @artists.each do |artist| %>
+        <li><strong><%= link_to artist.name, artist_path(artist) %></strong></li>
+           <%# link_to 'Edit', edit_artist_path(artist) %>
+      <% end %>
+    </ul>
   </div>
 </div>
-
-
-
-
-<!-- <h1>Artist list</h1>
-
-<% @artists.each do |artist| %>
-  <%= artist.name %>
-  <%= artist.years_active %>
-<% end %>
- -->

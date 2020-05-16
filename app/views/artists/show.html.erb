@@ -6,10 +6,9 @@
 
 <div class="d-flex slack-container">
   <div class="conversations-sidebar">
-    <h1>Playlist</h1>
     <div class="chat-section">
       <div class="chat-section-header">
-        <h3><%= link_to 'Home', artists_path %></h3>
+        <%= link_to 'Home', artists_path %>
       </div>
       <div class="channel">
         <%= link_to 'Add an artist', new_artist_path(@artist) %>
@@ -21,46 +20,36 @@
   </div>
   <div class="chat-container">
     <div class="chat-header">
-      <h1>Artist details</h1>
+      <h1><strong>Playlist</strong></h1>
     </div>
 
     <div class="artist-info">
       <h3><%= @artist.name %></h3>
-      <h4><%= @artist.years_active %> years active</h4>
-      <!-- name, image with big box -->
+      <% if @artist.separated %>
+        <h4><%= @artist.years_active %> years active (already separated) %></h4>
+      <% else %>
+        <h4><%= @artist.years_active %> years active (still active)</h4>
+      <% end %>
     </div>
     <div class="chat-conversations">
       <div class="message">
         <div class="card-product-photo">
-          <%# cl_image_tag @artist.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag @artist.photo.key, height: 350, width: 350, crop: :fill %>
         </div>
         <div class="message-content">
           <ul>
             <% i = 1 %>
             <% @artist.songs.each do |song| %>
-              <strong><%= i %>   <%= song.name %> from <%= song.album.name %></strong>
+              <strong><%= i %> -   <%= song.name %> from <%= song.album.name %></strong>
               <%# link_to song.album.name, album_path(@album) %>
-                <li><%= link_to 'Watch a video in YouTube', "https://www.youtube.com/results?search_query=#{song.name}" %></li>
+                <li><%= link_to 'Watch a video in YouTube', "https://www.youtube.com/results?search_query=#{song.name}", target: :_blank %></li>
                 <%# link_to 'Edit', edit_artist_song_path(song) %>
-                <li><%= link_to 'Delete', artist_song_path(song), method: :delete %></li>
+                <li><%= link_to 'Delete', song_path(song), method: :delete %></li>
               <% i += 1 %>
             <% end %>
           </ul>
-          <!-- iterate over songs song name <p><strong>arthur-littm</strong></p> -->
-          <!-- <p>Hey everyone 👋 We’ve just launched a new Le Wagon <strong>UI Kit</strong> 🚀 👉  <a href="https://uikit.lewagon.com/">https://uikit.lewagon.com/</a></p> -->
         </div>
       </div>
   </div>
 </div>
 
-
-<!-- <h1>Artist details</h1>
-
-<h3><%= @artist.name %></h3>
-<p><%= @artist.years_active %> years active</p> -->
-
-
-<!-- problem with edit
-need to change structure
-not album_path(@album) for show
--->

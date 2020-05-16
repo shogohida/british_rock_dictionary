@@ -11,10 +11,9 @@
     <%= simple_form_for(@artist) do |f| %>
         <%= f.input :name %>
         <%= f.input :years_active %>
-        <%= f.input :separated %>
+        <%= f.input :separated, as: :boolean, checked_value: true, unchecked_value: false %>
         <%= f.input :photo, as: :file %>
         <%= f.submit %>
     <% end %>
   </div>
 </div>
-<!-- to add uploding image feature -->

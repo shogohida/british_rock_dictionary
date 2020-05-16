@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   #get 'artists/show'
   #get 'artists/new'
   #get 'artists/edit'
-  root to: 'pages#home'
-  resources :artists, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :songs, only: [:new, :create, :edit, :update, :destroy]
+  root to: 'artists#index'
+  resources :artists, only: [:index, :show, :new, :create] do
+    resources :songs, only: [:new, :create]
   end
+  resources :songs, only: [:destroy]
   # resources :albums
 end

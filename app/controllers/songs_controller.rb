@@ -17,17 +17,17 @@ class SongsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    @song.update(song_params)
-    if @song.save
-      redirect_to song_path(@song)
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   @song.update(song_params)
+  #   if @song.save
+  #     redirect_to song_path(@song)
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @song.destroy
