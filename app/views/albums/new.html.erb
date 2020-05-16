@@ -3,6 +3,7 @@
 <%= simple_form_for(@album) do |f| %>
     <%= f.input :name %>
     <%= f.input :genre %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit %>
 <% end %>
 

@@ -17,16 +17,13 @@
 
 <div class="card-product">
   <!--  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
-  <div class="card-product-photo">
-    <%= cl_image_tag @artist.photo.key, height: 300, width: 400, crop: :fill %>
-  </div>
+
   <div class="card-product-infos">
     <div class="card-product-description">
       <h1><%= @artist.name %></h1>
       <% @artist.songs.each do |song| %>
-        <h1>-made of  <%= song.name %> of <%= song.album.name %> </h1>
-        <!-- could be written as @artist.ingredients too-->
-        <p> <%= link_to 'YouTube video',  %></p>
+        <h1><%= song.name %> from <%= song.album.name %> </h1>
+        <p> <%= link_to 'YouTube video', "https://www.youtube.com/results?search_query=#{song.name}" %></p>
 
         <p><%= link_to 'Delete', song_path(song), method: :delete %></p>
       <% end %>
@@ -39,12 +36,6 @@
 
 <%= link_to 'Add a song', new_artist_song_path(@artist) %>
 <%= link_to 'Back to list', artists_path %>
-
-
-
-
-
-
 
 
 <!-- <h1>Album details</h1>

@@ -1,8 +1,19 @@
 <h1>Artist details</h1>
 
-<p><%= @artist.name %></p>
+<h3><%= @artist.name %></h3>
+<p><%= @artist.years_active %> years active</p>
 
 <% @artist.songs.each do |song| %>
   <%= song.name %>
   <%= song.album.name %>
+  <%# link_to song.album.name, album_path(@album) %>
+  <%= link_to 'YouTube link', "https://www.youtube.com/results?search_query=#{song.name}" %>
+  <%= link_to 'Edit this song', edit_artist_song_path(song) %>
 <% end %>
+
+<%= link_to 'Add a new song', new_artist_song_path(@artist) %>
+
+<!-- problem with edit
+need to change structure
+not album_path(@album) for show
+-->

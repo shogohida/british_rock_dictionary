@@ -3,6 +3,8 @@
 <%= simple_form_for [@artist, @song] do |f| %>
   <%= f.input :name %>
   <%= f.input :minutes %>
-  <%= f.association :album %>
+  <%= f.association :album, input_html: { class: 'album' } %>
   <%= f.submit %>
 <% end %>
+
+<!-- need to change input_html -->
