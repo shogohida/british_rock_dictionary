@@ -16,6 +16,7 @@ require 'json'
 require 'open-uri'
 
 puts "Deleting all albums..."
+Album.destroy_all
 
 url1 = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=oasis&api_key=948ec2d4e8855e7af4ea00e92e7baf77&format=json'
 oasis_albums_serialized = open(url1).read
