@@ -15,6 +15,9 @@
 require 'json'
 require 'open-uri'
 
+puts "Deleting all songs..."
+Song.destroy_all
+
 puts "Deleting all albums..."
 Album.destroy_all
 
