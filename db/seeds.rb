@@ -15,6 +15,8 @@
 require 'json'
 require 'open-uri'
 
+puts "Deleting all albums..."
+
 url1 = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=oasis&api_key=948ec2d4e8855e7af4ea00e92e7baf77&format=json'
 oasis_albums_serialized = open(url1).read
 oasis_albums = JSON.parse(oasis_albums_serialized)
@@ -54,6 +56,13 @@ url5 = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=quee
 queen_albums_serialized = open(url5).read
 queen_albums = JSON.parse(queen_albums_serialized)
 queen_albums['topalbums']['album'].first(15).each do |album|
+  Album.create!(name: album['name'])
+end
+
+url7 = 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=arctic_monkeys&api_key=948ec2d4e8855e7af4ea00e92e7baf77&format=json'
+monkeys_albums_serialized = open(url7).read
+monkeys_albums = JSON.parse(monkeys_albums_serialized)
+monkeys_albums['topalbums']['album'].first(15).each do |album|
   Album.create!(name: album['name'])
 end
 
