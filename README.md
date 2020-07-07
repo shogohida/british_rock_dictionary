@@ -1,8 +1,12 @@
+# British Rock Dictionary
+![Screenshot from 2020-07-07 19-39-26](https://user-images.githubusercontent.com/10365357/86769187-bb152880-c089-11ea-8082-f739cac3d8d3.png)
+
 # About
 Create your playlist with YouTube links
 
+# Technologies used
+-Ruby on Rails  
+-HTML/CSS  
+
 # Future features
 1 Add Devise so that users can log in
-
-# Note
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
