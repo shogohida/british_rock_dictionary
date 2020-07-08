@@ -5,7 +5,9 @@
 Create your playlist with YouTube links
 
 # Technologies used
--Ruby on Rails  
+-Ruby 2.6.6  
+-Rails 6.0.0  
+-JavScript  
 -HTML/CSS  
 
 # Future features
