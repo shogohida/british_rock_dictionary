@@ -36,6 +36,14 @@ gem 'faker'
 gem 'cloudinary', '~> 1.12.0'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 4.0.0'
+end
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
+
+group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
