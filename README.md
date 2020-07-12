@@ -7,8 +7,10 @@ Create your playlist with YouTube links
 # Technologies used
 -Ruby 2.6.6  
 -Rails 6.0.0  
--JavScript  
+-JavaScript  
 -HTML/CSS  
+-PostgreSQL  
+-Heroku
 
 # Future features
 1 Add Devise so that users can log in
