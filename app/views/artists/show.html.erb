@@ -41,7 +41,6 @@
             <% i = 1 %>
             <% @artist.songs.each do |song| %>
               <strong><%= i %> -   <%= song.name %></strong> from <strong><%= song.album.name %></strong>
-              <%# link_to song.album.name, album_path(@album) %>
                 <li><%= link_to 'Watch a video in YouTube', "https://www.youtube.com/results?search_query=#{@artist.name} #{song.name}", target: :_blank %></li>
                 <%# link_to 'Edit', edit_artist_song_path(song) %>
                 <li><%= link_to 'Delete', song_path(song), method: :delete, data: { confirm: "Are you sure to delete #{song.name}?" } %></li>
