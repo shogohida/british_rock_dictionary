@@ -34,6 +34,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker'
 gem 'cloudinary', '~> 1.12.0'
+gem 'simplecov'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
