@@ -15,7 +15,8 @@ Create your playlist with YouTube links
 -PostgreSQL  
 -Git/GitHub  
 -Heroku  
--Rubocop
+-Rubocop  
+-Brakeman  
 
 # Future features
 1 Add Devise so that users can log in
