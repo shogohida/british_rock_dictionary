@@ -36,6 +36,7 @@ gem 'faker'
 gem 'cloudinary', '~> 1.12.0'
 gem 'simplecov'
 gem 'rack'
+gem 'rails_best_practices'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
