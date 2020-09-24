@@ -287,6 +287,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 4.3)
+  rack
   rails (~> 6.0.3)
   rspec-rails (~> 4.0.0)
   sass-rails (>= 6)
