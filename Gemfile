@@ -38,6 +38,7 @@ gem 'simplecov'
 gem 'rack'
 gem 'rails_best_practices'
 gem 'rubycritic'
+gem 'bullet', group: 'development'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
