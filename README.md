@@ -14,6 +14,7 @@ Create your playlist with YouTube links
 -HTML/CSS  
 -PostgreSQL  
 -Git/GitHub  
+-GitHub Actions  
 -Heroku  
 -Rubocop  
 -Brakeman  
